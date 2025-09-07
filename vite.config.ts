@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
     host: '0.0.0.0', // Também aplica a configuração ao servidor de pré-visualização
     port: 8080,
     allowedHosts: [
-      'web-4visionesg.knkugw.easypanel.host'
+      'web-4visionesg.knkugw.easypanel.host','4visionesg.com.br'
     ]
   },
   plugins: [react()].filter(Boolean),
