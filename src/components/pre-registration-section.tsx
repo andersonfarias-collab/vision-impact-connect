@@ -30,23 +30,31 @@ export const PreRegistrationSection = () => {
       return;
     }
 
+    // Phone validation
+    const phoneRegex = /^\+\d{1,3}\s?\(\d{2}\)\s?\d{4,5}-?\d{4}$/;
+    if (!phoneRegex.test(formData.phone)) {
+      toast({
+        title: "Telefone inválido",
+        description: "Use o formato: +55 (11) 99999-9999",
+        variant: "destructive"
+      });
+      return;
+    }
+
     try {
       const { error } = await supabase
         .from('pre_registrations')
-        .insert([{
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          role: formData.role
-        }]);
+        .insert([
+          {
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            role: formData.role
+          }
+        ]);
 
       if (error) {
-        toast({
-          title: "Erro ao cadastrar",
-          description: "Tente novamente em alguns instantes.",
-          variant: "destructive"
-        });
-        return;
+        throw error;
       }
 
       setIsSubmitted(true);
@@ -57,7 +65,7 @@ export const PreRegistrationSection = () => {
       });
     } catch (error) {
       toast({
-        title: "Erro ao cadastrar",
+        title: "Erro no cadastro",
         description: "Tente novamente em alguns instantes.",
         variant: "destructive"
       });
@@ -155,22 +163,25 @@ export const PreRegistrationSection = () => {
                     required
                   />
                 </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="phone" className="text-sm font-medium text-foreground flex items-center gap-2">
-                    <Phone className="w-4 h-4" />
-                    Telefone (DDI + DDD + Número)
-                  </Label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    placeholder="+55 11 99999-9999"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange("phone", e.target.value)}
-                    className="h-12 text-base"
-                    required
-                  />
-                </div>
+              </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="phone" className="text-sm font-medium text-foreground flex items-center gap-2">
+                  <Phone className="w-4 h-4" />
+                  Telefone
+                </Label>
+                <Input
+                  id="phone"
+                  type="tel"
+                  placeholder="+55 (11) 99999-9999"
+                  value={formData.phone}
+                  onChange={(e) => handleInputChange("phone", e.target.value)}
+                  className="h-12 text-base"
+                  required
+                />
+                <p className="text-xs text-muted-foreground">
+                  Formato: +DDI (DDD) Número (ex: +55 (11) 99999-9999)
+                </p>
               </div>
               
               <div className="space-y-2">
