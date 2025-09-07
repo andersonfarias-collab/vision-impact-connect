@@ -14,4 +14,10 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-}));
+plugins: [react()],
+  preview: {
+    host: true, // Necessário para ser acessível no container
+    // A linha mais importante:
+    allowedHosts: ['web-4vesg.knkugw.easypanel.host','4visionesg.com.br'],
+  }
+});
