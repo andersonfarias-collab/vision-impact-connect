@@ -15,12 +15,5 @@ export default defineConfig({
       'web-dominos.knkugw.easypanel.host',
       'domino.sjumper.qzz.io',
     ],
-  },
-  server: {
-    host: true,
-    allowedHosts: [
-      'web-4vesg.knkugw.easypanel.host',
-      '4visionesg.com.br',
-    ],
-  },
+    },
 });
