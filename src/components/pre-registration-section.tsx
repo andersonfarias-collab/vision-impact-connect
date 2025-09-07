@@ -4,13 +4,15 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { CheckCircle, Mail, User, Briefcase } from "lucide-react";
+import { CheckCircle, Mail, User, Briefcase, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 export const PreRegistrationSection = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     role: ""
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -19,7 +21,7 @@ export const PreRegistrationSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.email || !formData.role) {
+    if (!formData.name || !formData.email || !formData.phone || !formData.role) {
       toast({
         title: "Campos obrigatórios",
         description: "Por favor, preencha todos os campos.",
@@ -28,15 +30,38 @@ export const PreRegistrationSection = () => {
       return;
     }
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setIsSubmitted(true);
-    toast({
-      title: "Cadastro realizado!",
-      description: "Você será notificado sobre o lançamento da plataforma.",
-      variant: "default"
-    });
+    try {
+      const { error } = await supabase
+        .from('pre_registrations')
+        .insert([{
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          role: formData.role
+        }]);
+
+      if (error) {
+        toast({
+          title: "Erro ao cadastrar",
+          description: "Tente novamente em alguns instantes.",
+          variant: "destructive"
+        });
+        return;
+      }
+
+      setIsSubmitted(true);
+      toast({
+        title: "Cadastro realizado!",
+        description: "Você será notificado sobre o lançamento da plataforma.",
+        variant: "default"
+      });
+    } catch (error) {
+      toast({
+        title: "Erro ao cadastrar",
+        description: "Tente novamente em alguns instantes.",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -126,6 +151,22 @@ export const PreRegistrationSection = () => {
                     placeholder="seu@email.com"
                     value={formData.email}
                     onChange={(e) => handleInputChange("email", e.target.value)}
+                    className="h-12 text-base"
+                    required
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="phone" className="text-sm font-medium text-foreground flex items-center gap-2">
+                    <Phone className="w-4 h-4" />
+                    Telefone (DDI + DDD + Número)
+                  </Label>
+                  <Input
+                    id="phone"
+                    type="tel"
+                    placeholder="+55 11 99999-9999"
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange("phone", e.target.value)}
                     className="h-12 text-base"
                     required
                   />
