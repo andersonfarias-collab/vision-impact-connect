@@ -30,20 +30,14 @@ export const HeroSection = () => {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up">
-            <Button 
-              variant="hero" 
-              size="lg" 
-              className="px-12 py-6 text-lg"
-              onClick={() => document.getElementById('pre-registration')?.scrollIntoView({ behavior: 'smooth' })}
-            >
+            <Button variant="hero" size="lg" className="px-12 py-6 text-lg" onClick={() => document.getElementById('pre-registration')?.scrollIntoView({
+            behavior: 'smooth'
+          })}>
               Cadastre-se Grátis
             </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="px-12 py-6 text-lg border-white/30 hover:bg-white/10 text-green-300"
-              onClick={() => document.getElementById('target-audience')?.scrollIntoView({ behavior: 'smooth' })}
-            >
+            <Button variant="outline" size="lg" onClick={() => document.getElementById('target-audience')?.scrollIntoView({
+            behavior: 'smooth'
+          })} className="px-12 py-6 border-white/30 text-lg bg-transparent text-slate-50">
               Saiba Mais
             </Button>
           </div>
