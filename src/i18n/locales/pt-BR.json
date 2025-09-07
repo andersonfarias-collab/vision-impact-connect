@@ -71,15 +71,22 @@
     "errors": {
       "required_fields": "Por favor, preencha todos os campos.",
       "invalid_phone": "Use o formato: +55 (11) 99999-9999",
+      "invalid_name": "Nome deve ter entre 2 e 100 caracteres.",
+      "invalid_email": "Email inválido. Verifique o formato do email.",
       "registration_error": "Tente novamente em alguns instantes."
     },
     "messages": {
       "required_fields_title": "Campos obrigatórios",
       "invalid_phone_title": "Telefone inválido",
+      "invalid_name_title": "Nome inválido",
+      "invalid_email_title": "Email inválido",
       "success_title": "Cadastro realizado!",
       "success_message": "Você será notificado sobre o lançamento da plataforma.",
       "error_title": "Erro no cadastro"
     }
+  },
+  "admin": {
+    "panel": "Painel Administrativo"
   },
   "footer": {
     "description": "A primeira plataforma que conecta empreendedores ESG a investidores conscientes.",

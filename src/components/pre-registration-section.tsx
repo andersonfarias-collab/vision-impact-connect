@@ -8,6 +8,7 @@ import { CheckCircle, Mail, User, Briefcase, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { useTranslation } from 'react-i18next';
+import { sanitizeString, sanitizeEmail, sanitizePhone, validateEmail, validatePhone, validateName } from "@/utils/sanitization";
 
 export const PreRegistrationSection = () => {
   const { t } = useTranslation();
@@ -23,7 +24,16 @@ export const PreRegistrationSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.email || !formData.phone || !formData.role) {
+    // Sanitize inputs
+    const sanitizedData = {
+      name: sanitizeString(formData.name),
+      email: sanitizeEmail(formData.email),
+      phone: sanitizePhone(formData.phone),
+      role: sanitizeString(formData.role)
+    };
+    
+    // Validate required fields
+    if (!sanitizedData.name || !sanitizedData.email || !sanitizedData.phone || !sanitizedData.role) {
       toast({
         title: t('pre_registration.messages.required_fields_title'),
         description: t('pre_registration.errors.required_fields'),
@@ -32,9 +42,26 @@ export const PreRegistrationSection = () => {
       return;
     }
 
-    // Phone validation - adjust regex based on current language
-    const phoneRegex = /^\+\d{1,3}\s?\(\d{2,3}\)\s?\d{4,5}-?\d{4}$/;
-    if (!phoneRegex.test(formData.phone)) {
+    // Validate input formats
+    if (!validateName(sanitizedData.name)) {
+      toast({
+        title: t('pre_registration.messages.invalid_name_title'),
+        description: t('pre_registration.errors.invalid_name'),
+        variant: "destructive"
+      });
+      return;
+    }
+
+    if (!validateEmail(sanitizedData.email)) {
+      toast({
+        title: t('pre_registration.messages.invalid_email_title'),
+        description: t('pre_registration.errors.invalid_email'),
+        variant: "destructive"
+      });
+      return;
+    }
+
+    if (!validatePhone(sanitizedData.phone)) {
       toast({
         title: t('pre_registration.messages.invalid_phone_title'),
         description: t('pre_registration.errors.invalid_phone'),
@@ -46,14 +73,7 @@ export const PreRegistrationSection = () => {
     try {
       const { error } = await supabase
         .from('pre_registrations')
-        .insert([
-          {
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone,
-            role: formData.role
-          }
-        ]);
+        .insert([sanitizedData]);
 
       if (error) {
         throw error;
