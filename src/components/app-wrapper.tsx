@@ -11,7 +11,11 @@ import NotFound from "../pages/NotFound";
 const queryClient = new QueryClient();
 
 const AppWrapper = () => (
-  <Suspense fallback={<div>Loading...</div>}>
+  <Suspense fallback={
+    <div className="min-h-screen bg-gradient-hero flex items-center justify-center">
+      <div className="text-white text-xl">Loading...</div>
+    </div>
+  }>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />

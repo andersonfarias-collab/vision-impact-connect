@@ -22,22 +22,16 @@ const resources = {
   }
 };
 
-// Initialize i18n asynchronously to avoid blocking React
-const initI18n = async () => {
-  await i18n
-    .use(initReactI18next)
-    .init({
-      resources,
-      lng: 'pt-BR', // default language
-      fallbackLng: 'pt-BR',
-      
-      interpolation: {
-        escapeValue: false, // react already does escaping
-      },
-    });
-};
-
-// Initialize i18n
-initI18n();
+i18n
+  .use(initReactI18next)
+  .init({
+    resources,
+    lng: 'pt-BR', // default language
+    fallbackLng: 'pt-BR',
+    
+    interpolation: {
+      escapeValue: false, // react already does escaping
+    },
+  });
 
 export default i18n;
