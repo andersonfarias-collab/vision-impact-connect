@@ -47,12 +47,7 @@ export const Footer = () => {
                 <Mail className="w-4 h-4" />
                 <span>contato@4visionesg.com</span>
               </div>
-              <div className="flex gap-4 pt-4">
-                <a href="#" className="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent-light transition-colors">
-                  <Linkedin className="w-4 h-4 text-white" />
-                </a>
-                
-              </div>
+              
             </div>
           </div>
         </div>
