@@ -5,13 +5,12 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
-    host: "::",
+    host: true, // Permite que o servidor seja acessado externamente
     port: 8080,
   },
   preview: {
-    host: "::",
+    host: true, // Também aplica a configuração ao servidor de pré-visualização
     port: 8080,
-    allowedHosts: ["web-4vesg.knkugw.easypanel.host","4visionesg.com.br"],
   },
   plugins: [react()].filter(Boolean),
   resolve: {
