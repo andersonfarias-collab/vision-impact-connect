@@ -56,7 +56,7 @@ export const PreRegistrationSection = () => {
                 Bem-vindo à Comunidade 4VisionESG!
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Obrigado por se juntar a nós. Você receberá atualizações exclusivas sobre o lançamento da plataforma.
+                Perfeito! Você está na lista de espera e receberá todas as novidades sobre o lançamento da 4VisionESG em primeira mão.
               </p>
               <Button 
                 variant="hero" 
@@ -83,10 +83,17 @@ export const PreRegistrationSection = () => {
             <p className="text-2xl font-semibold text-accent mb-4">
               O Futuro ESG Começa Agora
             </p>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Deixe seu e-mail e seja notificado em primeira mão sobre o lançamento da plataforma. 
-              Junte-se à comunidade que está construindo o amanhã.
-            </p>
+            <div className="bg-accent/10 rounded-xl p-6 mb-6 max-w-2xl mx-auto">
+              <p className="text-accent font-semibold mb-2">🎯 Plataforma em desenvolvimento</p>
+              <p className="text-muted-foreground">
+                Estamos finalizando os últimos detalhes da 4VisionESG. Cadastre-se gratuitamente para:
+              </p>
+              <ul className="text-muted-foreground text-sm mt-3 space-y-1">
+                <li>• Receber notificação do lançamento oficial</li>
+                <li>• Ter acesso antecipado à plataforma</li>
+                <li>• Participar da comunidade beta</li>
+              </ul>
+            </div>
           </CardHeader>
           
           <CardContent className="p-8">

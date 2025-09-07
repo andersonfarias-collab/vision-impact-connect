@@ -48,10 +48,14 @@ export const MethodologySection = () => {
           <h3 className="text-xl font-bold text-foreground mb-6">
             Transparência e Rigor em Cada Etapa
           </h3>
-          <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Nossa plataforma não é apenas um ponto de encontro; é um ecossistema de confiança. 
-            Avaliamos cada projeto com base em 5 pilares essenciais de ESG:
+          <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-4">
+            Nossa plataforma será um ecossistema de confiança que avaliará cada projeto com base em 5 pilares essenciais de ESG:
           </p>
+          <div className="bg-accent/10 rounded-xl p-4 max-w-2xl mx-auto">
+            <p className="text-accent font-semibold text-sm">
+              ✨ Framework em desenvolvimento - Seja o primeiro a experimentar quando lançarmos!
+            </p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
