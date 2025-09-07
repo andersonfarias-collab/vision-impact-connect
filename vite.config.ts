@@ -1,11 +1,17 @@
 import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import path from "path";
 
 export default defineConfig({
-  // ...suas configs
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  plugins: [react()],
   preview: {
-    allowedHosts: [
-      'web-4vesg.knkugw.easypanel.host'
-    ],
-    port: 80 // se estiver usando essa porta
+    host: true, // Necessário para ser acessível no container
+    // A linha mais importante:
+    allowedHosts: ['web-4vesg.knkugw.easypanel.host','4visionesg.com.br'],
   }
-})
+});
