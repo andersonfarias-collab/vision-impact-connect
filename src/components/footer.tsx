@@ -55,7 +55,7 @@ export const Footer = () => {
         <Separator className="bg-primary-foreground/20 mb-8" />
         
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-primary-foreground/60">
-          <p>© 2025 4VisionESG. Todos os direitos reservados.</p>
+          <p>© 2025 4VisionESG. Todos os direitos reservados ao CNPJ: 60.567.402/0001-02 </p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="hover:text-accent-light transition-colors">Política de Privacidade</a>
             <a href="#" className="hover:text-accent-light transition-colors">Termos de Uso</a>
