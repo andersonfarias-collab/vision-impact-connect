@@ -70,7 +70,7 @@ export default {
         'gradient-trust': 'var(--gradient-trust)',
       },
       boxShadow: {
-        'green': 'var(--shadow-green)',
+        'primary': 'var(--shadow-primary)',
         'accent': 'var(--shadow-accent)',
       },
       fontFamily: {

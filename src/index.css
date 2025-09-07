@@ -8,36 +8,36 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* ESG Brand Colors - Sustainability and Trust */
+    /* Modern ESG Brand Colors - Dynamic and Professional */
     --background: 0 0% 100%;
-    --foreground: 216 28% 7%;
+    --foreground: 222 84% 4.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 216 28% 7%;
+    --card-foreground: 222 84% 4.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 216 28% 7%;
+    --popover-foreground: 222 84% 4.9%;
 
-    /* Primary: Deep Forest Green - Trust and Growth */
-    --primary: 158 64% 15%;
+    /* Primary: Modern Teal - Innovation and Trust */
+    --primary: 180 100% 25%;
     --primary-foreground: 0 0% 98%;
-    --primary-hover: 158 64% 12%;
+    --primary-hover: 180 100% 20%;
 
-    /* Secondary: Clean Slate Blue - Professional */
-    --secondary: 214 32% 91%;
-    --secondary-foreground: 158 64% 15%;
+    /* Secondary: Soft Purple - Premium Feel */
+    --secondary: 270 100% 98%;
+    --secondary-foreground: 180 100% 25%;
 
-    /* Muted: Light Background */
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    /* Muted: Clean Background */
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 16% 46.9%;
 
-    /* Accent: Emerald - ESG Impact */
-    --accent: 142 76% 36%;
+    /* Accent: Electric Blue - Energy and Future */
+    --accent: 210 100% 50%;
     --accent-foreground: 0 0% 98%;
-    --accent-light: 142 76% 46%;
+    --accent-light: 210 100% 60%;
 
-    /* Success: Vibrant Green */
-    --success: 142 71% 45%;
+    /* Success: Fresh Green */
+    --success: 142 76% 36%;
     --success-foreground: 0 0% 98%;
 
     --destructive: 0 84% 60%;
@@ -45,88 +45,82 @@ All colors MUST be HSL.
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 158 64% 15%;
+    --ring: 180 100% 25%;
 
-    /* ESG Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(158 64% 15%) 0%, hsl(142 76% 36%) 100%);
-    --gradient-sustainability: linear-gradient(135deg, hsl(142 76% 46%) 0%, hsl(168 76% 42%) 100%);
-    --gradient-trust: linear-gradient(135deg, hsl(214 32% 91%) 0%, hsl(210 40% 96%) 100%);
+    /* Modern Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(180 100% 25%) 0%, hsl(210 100% 50%) 100%);
+    --gradient-sustainability: linear-gradient(135deg, hsl(210 100% 60%) 0%, hsl(270 100% 65%) 100%);
+    --gradient-trust: linear-gradient(135deg, hsl(210 40% 98%) 0%, hsl(270 100% 98%) 100%);
     
-    /* Shadows with ESG theme */
-    --shadow-green: 0 10px 30px -10px hsl(158 64% 15% / 0.3);
-    --shadow-accent: 0 4px 20px -4px hsl(142 76% 36% / 0.4);
+    /* Modern Shadows */
+    --shadow-primary: 0 10px 30px -10px hsl(180 100% 25% / 0.3);
+    --shadow-accent: 0 4px 20px -4px hsl(210 100% 50% / 0.4);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
+    --sidebar-primary: 180 100% 25%;
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
+    --sidebar-accent-foreground: 180 100% 25%;
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 180 100% 25%;
   }
 
   .dark {
-    --background: 216 28% 7%;
-    --foreground: 0 0% 98%;
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-    --card: 217 33% 12%;
-    --card-foreground: 0 0% 98%;
+    --card: 222 84% 7%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 217 33% 12%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 222 84% 7%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 142 76% 46%;
-    --primary-foreground: 216 28% 7%;
-    --primary-hover: 142 76% 52%;
+    --primary: 210 100% 60%;
+    --primary-foreground: 222 84% 4.9%;
+    --primary-hover: 210 100% 65%;
 
-    --secondary: 217 33% 16%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 217 33% 16%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 142 76% 46%;
-    --accent-foreground: 216 28% 7%;
-    --accent-light: 142 76% 52%;
+    --accent: 210 100% 60%;
+    --accent-foreground: 222 84% 4.9%;
+    --accent-light: 210 100% 70%;
 
-    --success: 142 71% 45%;
+    --success: 142 76% 36%;
     --success-foreground: 0 0% 98%;
 
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 217 33% 16%;
-    --input: 217 33% 16%;
-    --ring: 142 76% 46%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 210 100% 60%;
 
     /* Dark mode gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(216 28% 7%) 0%, hsl(217 33% 12%) 100%);
-    --gradient-sustainability: linear-gradient(135deg, hsl(142 76% 46%) 0%, hsl(168 76% 42%) 100%);
-    --gradient-trust: linear-gradient(135deg, hsl(217 33% 16%) 0%, hsl(217 33% 12%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(222 84% 4.9%) 0%, hsl(217.2 32.6% 17.5%) 100%);
+    --gradient-sustainability: linear-gradient(135deg, hsl(210 100% 60%) 0%, hsl(270 100% 65%) 100%);
+    --gradient-trust: linear-gradient(135deg, hsl(217.2 32.6% 17.5%) 0%, hsl(222 84% 7%) 100%);
     
-    --shadow-green: 0 10px 30px -10px hsl(142 76% 46% / 0.3);
-    --shadow-accent: 0 4px 20px -4px hsl(142 76% 46% / 0.4);
+    --shadow-primary: 0 10px 30px -10px hsl(210 100% 60% / 0.3);
+    --shadow-accent: 0 4px 20px -4px hsl(210 100% 60% / 0.4);
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-primary: 210 100% 60%;
+    --sidebar-primary-foreground: 240 5.9% 10%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 210 100% 60%;
   }
 }
 

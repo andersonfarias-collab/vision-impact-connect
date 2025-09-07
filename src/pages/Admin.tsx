@@ -177,12 +177,12 @@ export default function Admin() {
     <div className="min-h-screen bg-gradient-sustainability p-6">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-white">Painel Administrativo</h1>
+          <h1 className="text-3xl font-bold text-primary">Painel Administrativo</h1>
           <div className="flex gap-4">
             <Button
               variant="outline"
               onClick={() => setShowChangePassword(!showChangePassword)}
-              className="border-white/30 text-white hover:bg-white/10"
+              className="border-primary/30 text-primary hover:bg-primary/10"
             >
               <Key className="w-4 h-4 mr-2" />
               Alterar Senha
@@ -190,7 +190,7 @@ export default function Admin() {
             <Button
               variant="outline"
               onClick={handleLogout}
-              className="border-white/30 text-white hover:bg-white/10"
+              className="border-primary/30 text-primary hover:bg-primary/10"
             >
               <LogOut className="w-4 h-4 mr-2" />
               Sair
