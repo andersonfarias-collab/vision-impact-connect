@@ -1,10 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { TrendingUp, Shield, Users, Target } from "lucide-react";
-
 export const TargetAudienceSection = () => {
-  return (
-    <section className="py-24 bg-gradient-trust">
+  return <section className="py-24 bg-gradient-trust">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -48,9 +46,7 @@ export const TargetAudienceSection = () => {
                 </div>
               </div>
               
-              <Button variant="esg" className="w-full mt-8">
-                Cadastre seu Projeto
-              </Button>
+              
             </CardContent>
           </Card>
 
@@ -86,13 +82,10 @@ export const TargetAudienceSection = () => {
                 </div>
               </div>
               
-              <Button variant="esg" className="w-full mt-8">
-                Explore Oportunidades
-              </Button>
+              
             </CardContent>
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };

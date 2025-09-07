@@ -1,16 +1,10 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-esg.jpg";
-
 export const HeroSection = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="ESG Investment Platform Visualization" 
-          className="w-full h-full object-cover opacity-20"
-        />
+        <img src={heroImage} alt="ESG Investment Platform Visualization" className="w-full h-full object-cover opacity-20" />
         <div className="absolute inset-0 bg-gradient-hero opacity-90"></div>
       </div>
       
@@ -39,7 +33,7 @@ export const HeroSection = () => {
             <Button variant="hero" size="lg" className="px-12 py-6 text-lg">
               Cadastre-se Grátis
             </Button>
-            <Button variant="outline" size="lg" className="px-12 py-6 text-lg border-white/30 text-white hover:bg-white/10">
+            <Button variant="outline" size="lg" className="px-12 py-6 text-lg border-white/30 hover:bg-white/10 text-green-300">
               Saiba Mais
             </Button>
           </div>
@@ -48,6 +42,5 @@ export const HeroSection = () => {
       
       {/* Decorative Elements */}
       <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-background/20 to-transparent"></div>
-    </section>
-  );
+    </section>;
 };

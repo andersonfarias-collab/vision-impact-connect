@@ -1,9 +1,7 @@
 import { Separator } from "@/components/ui/separator";
 import { Leaf, Mail, Linkedin, Twitter } from "lucide-react";
-
 export const Footer = () => {
-  return (
-    <footer className="bg-primary text-primary-foreground py-16">
+  return <footer className="bg-primary text-primary-foreground py-16">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
@@ -53,9 +51,7 @@ export const Footer = () => {
                 <a href="#" className="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent-light transition-colors">
                   <Linkedin className="w-4 h-4 text-white" />
                 </a>
-                <a href="#" className="w-8 h-8 bg-accent rounded-full flex items-center justify-center hover:bg-accent-light transition-colors">
-                  <Twitter className="w-4 h-4 text-white" />
-                </a>
+                
               </div>
             </div>
           </div>
@@ -64,7 +60,7 @@ export const Footer = () => {
         <Separator className="bg-primary-foreground/20 mb-8" />
         
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-primary-foreground/60">
-          <p>&copy; 2024 4VisionESG. Todos os direitos reservados.</p>
+          <p>© 2025 4VisionESG. Todos os direitos reservados.</p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="hover:text-accent-light transition-colors">Política de Privacidade</a>
             <a href="#" className="hover:text-accent-light transition-colors">Termos de Uso</a>
@@ -72,6 +68,5 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
