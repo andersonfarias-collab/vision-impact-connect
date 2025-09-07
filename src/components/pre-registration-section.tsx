@@ -73,7 +73,7 @@ export const PreRegistrationSection = () => {
   }
 
   return (
-    <section className="py-24 bg-gradient-sustainability">
+    <section id="pre-registration" className="py-24 bg-gradient-sustainability">
       <div className="max-w-4xl mx-auto px-6">
         <Card className="bg-white/95 backdrop-blur-sm shadow-2xl animate-fade-in">
           <CardHeader className="text-center pb-8">

@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { TrendingUp, Shield, Users, Target } from "lucide-react";
 export const TargetAudienceSection = () => {
-  return <section className="py-24 bg-gradient-trust">
+  return <section id="target-audience" className="py-24 bg-gradient-trust">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
