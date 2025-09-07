@@ -1,15 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { TrendingUp, Shield, Users, Target } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 export const TargetAudienceSection = () => {
+  const { t } = useTranslation();
+  
   return <section id="target-audience" className="py-24 bg-gradient-trust">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Para Quem é a Plataforma?
+            {t('target_audience.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Conectamos dois mundos essenciais para o futuro sustentável
+            {t('target_audience.subtitle')}
           </p>
         </div>
 
@@ -21,7 +24,7 @@ export const TargetAudienceSection = () => {
                 <TrendingUp className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-3xl font-bold text-foreground mb-4">
-                Para Empreendedores
+                {t('target_audience.entrepreneurs.title')}
               </h3>
               <h4 className="text-xl font-semibold text-accent mb-4">
                 Apresente seu Impacto, Atraia o Investimento Certo
@@ -29,7 +32,7 @@ export const TargetAudienceSection = () => {
             </CardHeader>
             <CardContent className="space-y-6">
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Sua dedicação a práticas ambientais, sociais e de governança merece ser vista. Nossa plataforma traduz seu compromisso ESG em uma vitrine poderosa, com métricas claras e dados verificáveis que atraem financiadores sérios e alinhados com sua visão.
+                {t('target_audience.entrepreneurs.description')}
               </p>
               <p className="text-muted-foreground leading-relaxed text-lg">
                 Valide seu projeto, destaque-se da concorrência e acelere seu crescimento.
@@ -57,7 +60,7 @@ export const TargetAudienceSection = () => {
                 <Shield className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-3xl font-bold text-foreground mb-4">
-                Para Financiadores
+                {t('target_audience.investors.title')}
               </h3>
               <h4 className="text-xl font-semibold text-accent mb-4">
                 Invista com Confiança em Projetos Verificados
@@ -65,7 +68,7 @@ export const TargetAudienceSection = () => {
             </CardHeader>
             <CardContent className="space-y-6">
               <p className="text-muted-foreground leading-relaxed text-lg">
-                Chega de incertezas. Tenha acesso a um portfólio de oportunidades de investimento pré-qualificadas com base em um rigoroso framework ESG.
+                {t('target_audience.investors.description')}
               </p>
               <p className="text-muted-foreground leading-relaxed text-lg">
                 Analise KPIs de sustentabilidade, relatórios de transparência e compare benchmarks do setor para tomar decisões informadas e maximizar tanto seu retorno financeiro quanto seu impacto positivo no mundo.

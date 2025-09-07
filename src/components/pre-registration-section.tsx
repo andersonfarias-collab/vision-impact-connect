@@ -7,8 +7,10 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { CheckCircle, Mail, User, Briefcase, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { useTranslation } from 'react-i18next';
 
 export const PreRegistrationSection = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,19 +25,19 @@ export const PreRegistrationSection = () => {
     
     if (!formData.name || !formData.email || !formData.phone || !formData.role) {
       toast({
-        title: "Campos obrigatórios",
-        description: "Por favor, preencha todos os campos.",
+        title: t('pre_registration.messages.required_fields_title'),
+        description: t('pre_registration.errors.required_fields'),
         variant: "destructive"
       });
       return;
     }
 
-    // Phone validation
-    const phoneRegex = /^\+\d{1,3}\s?\(\d{2}\)\s?\d{4,5}-?\d{4}$/;
+    // Phone validation - adjust regex based on current language
+    const phoneRegex = /^\+\d{1,3}\s?\(\d{2,3}\)\s?\d{4,5}-?\d{4}$/;
     if (!phoneRegex.test(formData.phone)) {
       toast({
-        title: "Telefone inválido",
-        description: "Use o formato: +55 (11) 99999-9999",
+        title: t('pre_registration.messages.invalid_phone_title'),
+        description: t('pre_registration.errors.invalid_phone'),
         variant: "destructive"
       });
       return;
@@ -59,14 +61,14 @@ export const PreRegistrationSection = () => {
 
       setIsSubmitted(true);
       toast({
-        title: "Cadastro realizado!",
-        description: "Você será notificado sobre o lançamento da plataforma.",
+        title: t('pre_registration.messages.success_title'),
+        description: t('pre_registration.messages.success_message'),
         variant: "default"
       });
     } catch (error) {
       toast({
-        title: "Erro no cadastro",
-        description: "Tente novamente em alguns instantes.",
+        title: t('pre_registration.messages.error_title'),
+        description: t('pre_registration.errors.registration_error'),
         variant: "destructive"
       });
     }
@@ -86,17 +88,17 @@ export const PreRegistrationSection = () => {
                 <CheckCircle className="w-10 h-10 text-white" />
               </div>
               <h2 className="text-3xl font-bold text-foreground mb-4">
-                Bem-vindo à Comunidade 4VisionESG!
+                {t('pre_registration.success.title')}
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Perfeito! Você está na lista de espera e receberá todas as novidades sobre o lançamento da 4VisionESG em primeira mão.
+                {t('pre_registration.success.message')}
               </p>
               <Button 
                 variant="hero" 
                 size="lg"
                 onClick={() => setIsSubmitted(false)}
               >
-                Cadastrar Outro Usuário
+                {t('pre_registration.success.register_another')}
               </Button>
             </CardContent>
           </Card>
@@ -111,20 +113,20 @@ export const PreRegistrationSection = () => {
         <Card className="bg-white/95 backdrop-blur-sm shadow-2xl animate-fade-in">
           <CardHeader className="text-center pb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Seja o Primeiro a Acessar
+              {t('pre_registration.title')}
             </h2>
             <p className="text-2xl font-semibold text-accent mb-4">
-              O Futuro ESG Começa Agora
+              {t('pre_registration.subtitle')}
             </p>
             <div className="bg-accent/10 rounded-xl p-6 mb-6 max-w-2xl mx-auto">
-              <p className="text-accent font-semibold mb-2">🎯 Plataforma em desenvolvimento</p>
+              <p className="text-accent font-semibold mb-2">{t('pre_registration.platform_development')}</p>
               <p className="text-muted-foreground">
-                Estamos finalizando os últimos detalhes da 4VisionESG. Cadastre-se gratuitamente para:
+                {t('pre_registration.development_description')}
               </p>
               <ul className="text-muted-foreground text-sm mt-3 space-y-1">
-                <li>• Receber notificação do lançamento oficial</li>
-                <li>• Ter acesso antecipado à plataforma</li>
-                <li>• Participar da comunidade beta</li>
+                <li>• {t('pre_registration.benefits.0')}</li>
+                <li>• {t('pre_registration.benefits.1')}</li>
+                <li>• {t('pre_registration.benefits.2')}</li>
               </ul>
             </div>
           </CardHeader>
@@ -135,12 +137,12 @@ export const PreRegistrationSection = () => {
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-sm font-medium text-foreground flex items-center gap-2">
                     <User className="w-4 h-4" />
-                    Nome Completo
+                    {t('pre_registration.form.full_name')}
                   </Label>
                   <Input
                     id="name"
                     type="text"
-                    placeholder="Seu nome completo"
+                    placeholder={t('pre_registration.form.full_name_placeholder')}
                     value={formData.name}
                     onChange={(e) => handleInputChange("name", e.target.value)}
                     className="h-12 text-base"
@@ -151,12 +153,12 @@ export const PreRegistrationSection = () => {
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-sm font-medium text-foreground flex items-center gap-2">
                     <Mail className="w-4 h-4" />
-                    E-mail de Contato
+                    {t('pre_registration.form.email')}
                   </Label>
                   <Input
                     id="email"
                     type="email"
-                    placeholder="seu@email.com"
+                    placeholder={t('pre_registration.form.email_placeholder')}
                     value={formData.email}
                     onChange={(e) => handleInputChange("email", e.target.value)}
                     className="h-12 text-base"
@@ -168,34 +170,34 @@ export const PreRegistrationSection = () => {
               <div className="space-y-2">
                 <Label htmlFor="phone" className="text-sm font-medium text-foreground flex items-center gap-2">
                   <Phone className="w-4 h-4" />
-                  Telefone
+                  {t('pre_registration.form.phone')}
                 </Label>
                 <Input
                   id="phone"
                   type="tel"
-                  placeholder="+55 (11) 99999-9999"
+                  placeholder={t('pre_registration.form.phone_placeholder')}
                   value={formData.phone}
                   onChange={(e) => handleInputChange("phone", e.target.value)}
                   className="h-12 text-base"
                   required
                 />
                 <p className="text-xs text-muted-foreground">
-                  Formato: +DDI (DDD) Número (ex: +55 (11) 99999-9999)
+                  {t('pre_registration.form.phone_format')}
                 </p>
               </div>
               
               <div className="space-y-2">
                 <Label htmlFor="role" className="text-sm font-medium text-foreground flex items-center gap-2">
                   <Briefcase className="w-4 h-4" />
-                  Eu sou:
+                  {t('pre_registration.form.role')}
                 </Label>
                 <Select value={formData.role} onValueChange={(value) => handleInputChange("role", value)}>
                   <SelectTrigger className="h-12 text-base">
-                    <SelectValue placeholder="Selecione sua categoria" />
+                    <SelectValue placeholder={t('pre_registration.form.role_placeholder')} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="entrepreneur">Empreendedor</SelectItem>
-                    <SelectItem value="investor">Financiador/Investidor</SelectItem>
+                    <SelectItem value="entrepreneur">{t('pre_registration.form.entrepreneur')}</SelectItem>
+                    <SelectItem value="investor">{t('pre_registration.form.investor')}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -207,13 +209,13 @@ export const PreRegistrationSection = () => {
                   size="lg" 
                   className="w-full h-14 text-xl"
                 >
-                  QUERO FAZER PARTE
+                  {t('pre_registration.form.submit')}
                 </Button>
               </div>
               
               <div className="text-center pt-4">
                 <p className="text-sm text-muted-foreground">
-                  Ao se cadastrar, você concorda em receber comunicações sobre a plataforma 4VisionESG.
+                  {t('pre_registration.form.terms')}
                 </p>
               </div>
             </form>

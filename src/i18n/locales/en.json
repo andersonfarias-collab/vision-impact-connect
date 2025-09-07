@@ -1,0 +1,102 @@
+{
+  "hero": {
+    "title": "4VisionESG",
+    "subtitle": "Connecting Capital to a Sustainable Future",
+    "description": "The first platform that unites entrepreneurs with impact projects to investors who value real ESG growth.",
+    "coming_soon": "🚀 Coming soon!",
+    "coming_soon_description": "Register to be notified about the launch and get early access to the platform.",
+    "register_free": "Register Free",
+    "learn_more": "Learn More"
+  },
+  "target_audience": {
+    "title": "Who is 4VisionESG for?",
+    "subtitle": "Our platform connects two worlds essential for a sustainable future",
+    "entrepreneurs": {
+      "title": "ESG Entrepreneurs",
+      "description": "Do you have a project with environmental, social or governance impact and need capital to grow? 4VisionESG is your meeting point with investors who share your sustainable vision."
+    },
+    "investors": {
+      "title": "Conscious Investors",
+      "description": "Are you looking for investment opportunities that generate financial returns and positive impact? Discover verified ESG projects and connect directly with visionary entrepreneurs."
+    }
+  },
+  "methodology": {
+    "title": "Our ESG Methodology",
+    "subtitle": "How we ensure quality and real impact of projects",
+    "steps": {
+      "analysis": {
+        "title": "Rigorous Analysis",
+        "description": "Each project goes through a detailed evaluation of ESG criteria, ensuring real impact and sustainability."
+      },
+      "verification": {
+        "title": "Impact Verification",
+        "description": "We use internationally recognized metrics to validate the potential for environmental and social impact."
+      },
+      "connection": {
+        "title": "Smart Connection",
+        "description": "Our algorithm connects projects and investors based on compatibility of values and impact objectives."
+      }
+    }
+  },
+  "pre_registration": {
+    "title": "Be the First to Access",
+    "subtitle": "The ESG Future Starts Now",
+    "platform_development": "🎯 Platform in development",
+    "development_description": "We are finalizing the last details of 4VisionESG. Register for free to:",
+    "benefits": [
+      "Receive notification of the official launch",
+      "Get early access to the platform",
+      "Participate in the beta community"
+    ],
+    "form": {
+      "full_name": "Full Name",
+      "full_name_placeholder": "Your full name",
+      "email": "Contact Email",
+      "email_placeholder": "your@email.com",
+      "phone": "Phone",
+      "phone_placeholder": "+1 (555) 123-4567",
+      "phone_format": "Format: +Country (Area) Number (ex: +1 (555) 123-4567)",
+      "role": "I am:",
+      "role_placeholder": "Select your category",
+      "entrepreneur": "Entrepreneur",
+      "investor": "Financier/Investor",
+      "submit": "I WANT TO BE PART",
+      "terms": "By registering, you agree to receive communications about the 4VisionESG platform."
+    },
+    "success": {
+      "title": "Welcome to the 4VisionESG Community!",
+      "message": "Perfect! You are on the waiting list and will receive all the news about the launch of 4VisionESG first hand.",
+      "register_another": "Register Another User"
+    },
+    "errors": {
+      "required_fields": "Please fill in all fields.",
+      "invalid_phone": "Use the format: +1 (555) 123-4567",
+      "registration_error": "Try again in a few moments."
+    },
+    "messages": {
+      "required_fields_title": "Required fields",
+      "invalid_phone_title": "Invalid phone",
+      "success_title": "Registration completed!",
+      "success_message": "You will be notified about the platform launch.",
+      "error_title": "Registration error"
+    }
+  },
+  "footer": {
+    "description": "The first platform that connects ESG entrepreneurs to conscious investors.",
+    "links": {
+      "platform": "Platform",
+      "about": "About Us",
+      "methodology": "Methodology",
+      "contact": "Contact"
+    },
+    "contact": {
+      "title": "Contact",
+      "email": "contact@4visionesg.com",
+      "phone": "+1 (555) 123-4567"
+    },
+    "rights": "© 2024 4VisionESG. All rights reserved."
+  },
+  "language": {
+    "select": "Language"
+  }
+}

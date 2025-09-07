@@ -1,7 +1,10 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Leaf, Users, Shield, BarChart3, Heart } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 export const MethodologySection = () => {
+  const { t } = useTranslation();
+  
   const pillars = [
     {
       icon: Leaf,
@@ -40,10 +43,10 @@ export const MethodologySection = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Como Funciona
+            {t('methodology.title')}
           </h2>
           <p className="text-2xl font-semibold text-accent mb-4">
-            Nossa Metodologia
+            {t('methodology.subtitle')}
           </p>
           <h3 className="text-xl font-bold text-foreground mb-6">
             Transparência e Rigor em Cada Etapa

@@ -1,7 +1,16 @@
 import { Button } from "@/components/ui/button";
+import { LanguageSelector } from "@/components/language-selector";
 import heroImage from "@/assets/hero-esg.jpg";
+import { useTranslation } from 'react-i18next';
 export const HeroSection = () => {
+  const { t } = useTranslation();
+  
   return <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
+      {/* Language Selector - Top Left */}
+      <div className="absolute top-6 left-6 z-20">
+        <LanguageSelector />
+      </div>
+
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img src={heroImage} alt="ESG Investment Platform Visualization" className="w-full h-full object-cover opacity-20" />
@@ -16,15 +25,15 @@ export const HeroSection = () => {
             <span className="text-accent-light">ESG</span>
           </h1>
           <p className="text-2xl md:text-3xl text-white/90 mb-6 font-light max-w-4xl mx-auto leading-relaxed">
-            Conectando Capital a um Futuro Sustentável
+            {t('hero.subtitle')}
           </p>
           <p className="text-lg md:text-xl text-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
-            A primeira plataforma que une empreendedores com projetos de impacto a investidores que valorizam o crescimento ESG real.
+            {t('hero.description')}
           </p>
           <div className="bg-accent/20 backdrop-blur-sm rounded-2xl p-6 mb-12 max-w-2xl mx-auto border border-accent/30">
-            <p className="text-white font-semibold text-lg mb-2">🚀 Em breve!</p>
+            <p className="text-white font-semibold text-lg mb-2">{t('hero.coming_soon')}</p>
             <p className="text-white/90">
-              Cadastre-se para ser notificado sobre o lançamento e garanta acesso antecipado à plataforma.
+              {t('hero.coming_soon_description')}
             </p>
           </div>
           
@@ -33,12 +42,12 @@ export const HeroSection = () => {
             <Button variant="hero" size="lg" className="px-12 py-6 text-lg" onClick={() => document.getElementById('pre-registration')?.scrollIntoView({
             behavior: 'smooth'
           })}>
-              Cadastre-se Grátis
+              {t('hero.register_free')}
             </Button>
             <Button variant="outline" size="lg" onClick={() => document.getElementById('target-audience')?.scrollIntoView({
             behavior: 'smooth'
           })} className="px-12 py-6 border-white/30 text-lg bg-transparent text-slate-50">
-              Saiba Mais
+              {t('hero.learn_more')}
             </Button>
           </div>
         </div>

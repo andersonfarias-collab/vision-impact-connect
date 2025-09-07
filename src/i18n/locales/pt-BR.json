@@ -1,0 +1,102 @@
+{
+  "hero": {
+    "title": "4VisionESG",
+    "subtitle": "Conectando Capital a um Futuro Sustentável",
+    "description": "A primeira plataforma que une empreendedores com projetos de impacto a investidores que valorizam o crescimento ESG real.",
+    "coming_soon": "🚀 Em breve!",
+    "coming_soon_description": "Cadastre-se para ser notificado sobre o lançamento e garanta acesso antecipado à plataforma.",
+    "register_free": "Cadastre-se Grátis",
+    "learn_more": "Saiba Mais"
+  },
+  "target_audience": {
+    "title": "Para Quem é a 4VisionESG?",
+    "subtitle": "Nossa plataforma conecta dois mundos essenciais para o futuro sustentável",
+    "entrepreneurs": {
+      "title": "Empreendedores ESG",
+      "description": "Você tem um projeto com impacto ambiental, social ou de governança e precisa de capital para crescer? A 4VisionESG é seu ponto de encontro dengan investidores que compartilham sua visão sustentável."
+    },
+    "investors": {
+      "title": "Investidores Conscientes",
+      "description": "Você busca oportunidades de investimento que geram retorno financeiro e impacto positivo? Descubra projetos ESG verificados e conecte-se diretamente com empreendedores visionários."
+    }
+  },
+  "methodology": {
+    "title": "Nossa Metodologia ESG",
+    "subtitle": "Como garantimos a qualidade e o impacto real dos projetos",
+    "steps": {
+      "analysis": {
+        "title": "Análise Rigorosa",
+        "description": "Cada projeto passa por uma avaliação detalhada dos critérios ESG, garantindo impacto real e sustentabilidade."
+      },
+      "verification": {
+        "title": "Verificação de Impacto",
+        "description": "Utilizamos métricas reconhecidas internacionalmente para validar o potencial de impacto ambiental e social."
+      },
+      "connection": {
+        "title": "Conexão Inteligente",
+        "description": "Nosso algoritmo conecta projetos e investidores com base em compatibilidade de valores e objetivos de impacto."
+      }
+    }
+  },
+  "pre_registration": {
+    "title": "Seja o Primeiro a Acessar",
+    "subtitle": "O Futuro ESG Começa Agora",
+    "platform_development": "🎯 Plataforma em desenvolvimento",
+    "development_description": "Estamos finalizando os últimos detalhes da 4VisionESG. Cadastre-se gratuitamente para:",
+    "benefits": [
+      "Receber notificação do lançamento oficial",
+      "Ter acesso antecipado à plataforma",
+      "Participar da comunidade beta"
+    ],
+    "form": {
+      "full_name": "Nome Completo",
+      "full_name_placeholder": "Seu nome completo",
+      "email": "E-mail de Contato",
+      "email_placeholder": "seu@email.com",
+      "phone": "Telefone",
+      "phone_placeholder": "+55 (11) 99999-9999",
+      "phone_format": "Formato: +DDI (DDD) Número (ex: +55 (11) 99999-9999)",
+      "role": "Eu sou:",
+      "role_placeholder": "Selecione sua categoria",
+      "entrepreneur": "Empreendedor",
+      "investor": "Financiador/Investidor",
+      "submit": "QUERO FAZER PARTE",
+      "terms": "Ao se cadastrar, você concorda em receber comunicações sobre a plataforma 4VisionESG."
+    },
+    "success": {
+      "title": "Bem-vindo à Comunidade 4VisionESG!",
+      "message": "Perfeito! Você está na lista de espera e receberá todas as novidades sobre o lançamento da 4VisionESG em primeira mão.",
+      "register_another": "Cadastrar Outro Usuário"
+    },
+    "errors": {
+      "required_fields": "Por favor, preencha todos os campos.",
+      "invalid_phone": "Use o formato: +55 (11) 99999-9999",
+      "registration_error": "Tente novamente em alguns instantes."
+    },
+    "messages": {
+      "required_fields_title": "Campos obrigatórios",
+      "invalid_phone_title": "Telefone inválido",
+      "success_title": "Cadastro realizado!",
+      "success_message": "Você será notificado sobre o lançamento da plataforma.",
+      "error_title": "Erro no cadastro"
+    }
+  },
+  "footer": {
+    "description": "A primeira plataforma que conecta empreendedores ESG a investidores conscientes.",
+    "links": {
+      "platform": "Plataforma",
+      "about": "Sobre Nós",
+      "methodology": "Metodologia",
+      "contact": "Contato"
+    },
+    "contact": {
+      "title": "Contato",
+      "email": "contato@4visionesg.com",
+      "phone": "+55 (11) 99999-9999"
+    },
+    "rights": "© 2024 4VisionESG. Todos os direitos reservados."
+  },
+  "language": {
+    "select": "Idioma"
+  }
+}
