@@ -11,7 +11,16 @@ export default defineConfig({
   plugins: [react()],
   preview: {
     host: true, // Necessário para ser acessível no container
-    // A linha mais importante:
-    allowedHosts: ['web-4vesg.knkugw.easypanel.host','4visionesg.com.br'],
-  }
+    allowedHosts: [
+      'web-dominos.knkugw.easypanel.host',
+      'domino.sjumper.qzz.io',
+    ],
+  },
+  server: {
+    host: true,
+    allowedHosts: [
+      'web-4vesg.knkugw.easypanel.host',
+      '4visionesg.com.br',
+    ],
+  },
 });
