@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { LanguageSelector } from "@/components/language-selector";
-import heroImage from "@/assets/hero-esg.jpg";
+import heroImage from "@/assets/hero-background.png";
 import { useTranslation } from 'react-i18next';
 export const HeroSection = () => {
   const { t } = useTranslation();
@@ -13,8 +13,8 @@ export const HeroSection = () => {
 
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img src={heroImage} alt="ESG Investment Platform Visualization" className="w-full h-full object-cover opacity-20" />
-        <div className="absolute inset-0 bg-gradient-hero opacity-90"></div>
+        <img src={heroImage} alt="4Vision ESG Global Network Platform" className="w-full h-full object-cover opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/80"></div>
       </div>
       
       {/* Content */}
