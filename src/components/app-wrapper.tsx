@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense, lazy } from 'react';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
@@ -6,9 +6,11 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/hooks/use-auth";
 import Index from "../pages/Index";
-import Admin from "../pages/Admin";
-import Auth from "../pages/Auth";
-import NotFound from "../pages/NotFound";
+
+// Lazy load non-critical routes to reduce initial bundle size
+const Admin = lazy(() => import("../pages/Admin"));
+const Auth = lazy(() => import("../pages/Auth"));
+const NotFound = lazy(() => import("../pages/NotFound"));
 
 const queryClient = new QueryClient();
 
