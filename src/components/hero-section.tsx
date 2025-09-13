@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { LanguageSelector } from "@/components/language-selector";
-import heroImage from "@/assets/hero-background.png";
+import heroImage from "@/assets/hero-background.webp";
 import { useTranslation } from 'react-i18next';
 export const HeroSection = () => {
   const { t } = useTranslation();
