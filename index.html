@@ -9,9 +9,8 @@
     <meta name="keywords" content="ESG, investimentos sustentáveis, impacto social, governança corporativa, empreendedorismo verde, sustentabilidade">
 
     <!-- Resource hints for performance optimization -->
-    <link rel="preload" href="/src/main.tsx" as="script" type="module">
-    <link rel="modulepreload" href="/src/main.tsx">
-    <link rel="preload" href="/src/index.css" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     
@@ -34,6 +33,6 @@
 
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/main.tsx" fetchpriority="high"></script>
   </body>
 </html>
