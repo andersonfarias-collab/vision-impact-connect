@@ -212,7 +212,10 @@ export const PreRegistrationSection = () => {
                   {t('pre_registration.form.role')}
                 </Label>
                 <Select value={formData.role} onValueChange={(value) => handleInputChange("role", value)}>
-                  <SelectTrigger className="h-12 text-base">
+                  <SelectTrigger 
+                    className="h-12 text-base"
+                    aria-label={t('pre_registration.form.role')}
+                  >
                     <SelectValue placeholder={t('pre_registration.form.role_placeholder')} />
                   </SelectTrigger>
                   <SelectContent>

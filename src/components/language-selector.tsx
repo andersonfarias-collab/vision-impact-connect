@@ -43,7 +43,10 @@ export const LanguageSelector = () => {
     <div className="flex items-center gap-2">
       <Globe className="w-4 h-4 text-white/80" />
       <Select value={i18n.language} onValueChange={handleLanguageChange}>
-        <SelectTrigger className="w-32 h-8 bg-white/10 border-white/20 text-white text-sm">
+        <SelectTrigger 
+          className="w-32 h-8 bg-white/10 border-white/20 text-white text-sm"
+          aria-label="Select language"
+        >
           <SelectValue>
             <span className="flex items-center gap-1">
               {currentLanguage?.flag} {currentLanguage?.code.toUpperCase()}
