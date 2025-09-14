@@ -11,8 +11,19 @@
     <!-- Resource hints for performance optimization -->
     <link rel="preload" href="/src/main.tsx" as="script" type="module">
     <link rel="modulepreload" href="/src/main.tsx">
+    <link rel="preload" href="/src/index.css" as="style">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- Critical CSS optimization -->
+    <style>
+      /* Critical above-the-fold styles */
+      html { font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; }
+      body { margin: 0; padding: 0; min-height: 100vh; }
+      #root { min-height: 100vh; }
+      .min-h-screen { min-height: 100vh; }
+      .bg-gradient-hero { background: linear-gradient(135deg, hsl(158 64% 15%) 0%, hsl(142 76% 28%) 100%); }
+    </style>
 
     <meta property="og:title" content="4VisionESG - Conectando Capital a um Futuro Sustentável" />
     <meta property="og:description" content="A primeira plataforma que une empreendedores com projetos de impacto a investidores que valorizam o crescimento ESG real." />
