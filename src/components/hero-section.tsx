@@ -3,7 +3,7 @@ import { Suspense, lazy } from "react";
 
 // Lazy load LanguageSelector to reduce initial bundle
 const LanguageSelector = lazy(() => import("@/components/language-selector").then(module => ({ default: module.LanguageSelector })));
-import heroImage from "@/assets/hero-background-optimized.webp";
+import heroImage from "@/assets/hero-background-new.webp";
 import { useTranslation } from 'react-i18next';
 export const HeroSection = () => {
   const { t } = useTranslation();
