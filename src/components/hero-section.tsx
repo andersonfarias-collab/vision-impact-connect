@@ -1,5 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { LanguageSelector } from "@/components/language-selector";
+import { Suspense, lazy } from "react";
+
+// Lazy load LanguageSelector to reduce initial bundle
+const LanguageSelector = lazy(() => import("@/components/language-selector").then(module => ({ default: module.LanguageSelector })));
 import heroImage from "@/assets/hero-background-new.webp";
 import { useTranslation } from 'react-i18next';
 export const HeroSection = () => {
@@ -8,7 +11,9 @@ export const HeroSection = () => {
   return <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
       {/* Language Selector - Top Left */}
       <div className="absolute top-6 left-6 z-20">
-        <LanguageSelector />
+        <Suspense fallback={<div className="w-32 h-8 bg-white/10 rounded animate-pulse"></div>}>
+          <LanguageSelector />
+        </Suspense>
       </div>
 
       {/* Background Image with Overlay - Modern format optimization */}

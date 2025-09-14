@@ -5,9 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/hooks/use-auth";
-import Index from "../pages/Index";
-
-// Lazy load non-critical routes to reduce initial bundle size
+// Lazy load all routes to reduce initial bundle size
+const Index = lazy(() => import("../pages/Index"));
 const Admin = lazy(() => import("../pages/Admin"));
 const Auth = lazy(() => import("../pages/Auth"));
 const NotFound = lazy(() => import("../pages/NotFound"));

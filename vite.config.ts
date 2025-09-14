@@ -7,6 +7,16 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => ({
   build: {
     sourcemap: true, // Enable source maps for debugging and SEO insights
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          ui: ['@radix-ui/react-select', '@radix-ui/react-dialog', '@radix-ui/react-toast'],
+          router: ['react-router-dom'],
+          i18n: ['react-i18next', 'i18next']
+        }
+      }
+    }
   },
   server: {
     host: "::",
