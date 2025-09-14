@@ -14,6 +14,17 @@ export default defineConfig(({ mode }) => ({
           ui: ['@radix-ui/react-select', '@radix-ui/react-dialog', '@radix-ui/react-toast'],
           router: ['react-router-dom'],
           i18n: ['react-i18next', 'i18next']
+        },
+        assetFileNames: (assetInfo) => {
+          const name = assetInfo.name;
+          if (!name) return `assets/[name]-[hash][extname]`;
+          
+          const info = name.split('.');
+          const ext = info[info.length - 1];
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+            return `assets/images/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
         }
       }
     }

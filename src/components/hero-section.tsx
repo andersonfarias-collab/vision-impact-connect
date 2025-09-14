@@ -20,12 +20,16 @@ export const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <picture>
           <source srcSet={heroImage} type="image/webp" />
+          <source srcSet={heroImage} type="image/avif" />
           <img 
             src={heroImage} 
             alt="4Vision ESG Global Network Platform" 
             className="w-full h-full object-cover opacity-30"
             loading="eager"
             fetchPriority="high"
+            decoding="async"
+            width="1920"
+            height="1080"
           />
         </picture>
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/80"></div>
