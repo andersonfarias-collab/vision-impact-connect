@@ -33,6 +33,17 @@
       #root { min-height: 100vh; }
       .min-h-screen { min-height: 100vh; }
       .bg-gradient-hero { background: linear-gradient(135deg, hsl(158 64% 15%) 0%, hsl(142 76% 28%) 100%); }
+      /* Optimize font loading to reduce render blocking */
+      @font-face {
+        font-family: 'Inter';
+        font-display: swap;
+        src: local('Inter');
+      }
+      /* Critical LCP text styles */
+      .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+      .text-white\/80 { color: rgb(255 255 255 / 0.8); }
+      .animate-fade-in { animation: fadeIn 0.5s ease-in; }
+      @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 
     <meta property="og:title" content="4VisionESG - Conectando Capital a um Futuro Sustentável" />
@@ -44,6 +55,6 @@
 
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx" fetchpriority="high" defer></script>
+    <script type="module" src="/src/main.tsx" fetchpriority="high"></script>
   </body>
 </html>
