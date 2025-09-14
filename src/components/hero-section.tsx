@@ -11,9 +11,18 @@ export const HeroSection = () => {
         <LanguageSelector />
       </div>
 
-      {/* Background Image with Overlay */}
+      {/* Background Image with Overlay - Modern format optimization */}
       <div className="absolute inset-0 z-0">
-        <img src={heroImage} alt="4Vision ESG Global Network Platform" className="w-full h-full object-cover opacity-30" />
+        <picture>
+          <source srcSet={heroImage} type="image/webp" />
+          <img 
+            src={heroImage} 
+            alt="4Vision ESG Global Network Platform" 
+            className="w-full h-full object-cover opacity-30"
+            loading="eager"
+            fetchPriority="high"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/80"></div>
       </div>
       
