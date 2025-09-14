@@ -21,8 +21,11 @@
     <!-- Preload critical hero image for LCP optimization -->
     <link rel="preload" as="image" href="/src/assets/hero-background-4vision.webp" type="image/webp" fetchpriority="high">
     
+    <!-- Modulepreload for main JS to reduce critical request chain -->
+    <link rel="modulepreload" href="/src/main.tsx" fetchpriority="high">
+    
     <!-- Preload critical CSS to avoid render blocking -->
-    <link rel="preload" href="/src/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/src/index.css" as="style" onload="this.onload=null;this.rel='stylesheet'" fetchpriority="high">
     <noscript><link rel="stylesheet" href="/src/index.css"></noscript>
     
     <!-- Critical CSS optimization -->
