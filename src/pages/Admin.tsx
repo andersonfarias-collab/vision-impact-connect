@@ -8,6 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/use-auth";
 import { Download, LogOut, Activity } from "lucide-react";
+
 interface PreRegistration {
   id: string;
   name: string;
@@ -33,6 +34,7 @@ interface KeepAliveStatus {
     responseTime: number;
   };
 }
+
 export default function Admin() {
   const navigate = useNavigate();
   const { user, isAdmin, isLoading, signOut } = useAuth();
@@ -40,6 +42,7 @@ export default function Admin() {
   const [pingLogs, setPingLogs] = useState<PingLog[]>([]);
   const [keepAliveStatus, setKeepAliveStatus] = useState<KeepAliveStatus | null>(null);
   const { toast } = useToast();
+
   useEffect(() => {
     // Redirect to auth page if not authenticated or not admin
     if (!isLoading && (!user || !isAdmin)) {
@@ -53,18 +56,19 @@ export default function Admin() {
       fetchPingLogs();
     }
   }, [user, isAdmin, isLoading, navigate]);
+
   const handleLogout = async () => {
     await signOut();
     navigate('/auth');
   };
+
   const fetchRegistrations = async () => {
     try {
-      const {
-        data,
-        error
-      } = await supabase.from('pre_registrations').select('*').order('created_at', {
-        ascending: false
-      });
+      const { data, error } = await supabase
+        .from('pre_registrations')
+        .select('*')
+        .order('created_at', { ascending: false });
+
       if (error) throw error;
       setRegistrations(data || []);
     } catch (error) {
@@ -108,7 +112,7 @@ export default function Admin() {
       });
       
       toast({
-        title: "Teste bem-sucedido!",
+        title: "✅ Teste bem-sucedido!",
         description: `Keep-alive executado em ${data.responseTime}ms`,
       });
       
@@ -129,17 +133,27 @@ export default function Admin() {
       });
     }
   };
+
   const exportToCSV = () => {
     const headers = ['Nome', 'Email', 'Telefone', 'Tipo', 'Data de Cadastro'];
-    const csvContent = [headers.join(','), ...registrations.map(reg => [`"${reg.name}"`, `"${reg.email}"`, `"${reg.phone}"`, `"${reg.role === 'entrepreneur' ? 'Empreendedor' : 'Financiador/Investidor'}"`, `"${new Date(reg.created_at).toLocaleDateString('pt-BR')}"`].join(','))].join('\n');
-    const blob = new Blob([csvContent], {
-      type: 'text/csv;charset=utf-8;'
-    });
+    const csvContent = [
+      headers.join(','),
+      ...registrations.map(reg => [
+        `"${reg.name}"`,
+        `"${reg.email}"`,
+        `"${reg.phone}"`,
+        `"${reg.role === 'entrepreneur' ? 'Empreendedor' : 'Financiador/Investidor'}"`,
+        `"${new Date(reg.created_at).toLocaleDateString('pt-BR')}"`
+      ].join(','))
+    ].join('\n');
+
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
     link.download = `pre-cadastros-4visionesg-${new Date().toISOString().split('T')[0]}.csv`;
     link.click();
   };
+
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gradient-sustainability flex items-center justify-center">
@@ -149,15 +163,21 @@ export default function Admin() {
   }
 
   if (!user || !isAdmin) {
-    return null; // Will redirect via useEffect
+    return null;
   }
-  return <div className="min-h-screen bg-gradient-sustainability p-6">
+
+  return (
+    <div className="min-h-screen bg-gradient-sustainability p-6">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold text-white">Painel Administrativo</h1>
-          <div className="flex gap-4">
+          <div className="flex gap-4 items-center">
             <span className="text-white/80">Bem-vindo, {user.email}</span>
-            <Button variant="outline" onClick={handleLogout} className="border-white/30 hover:bg-white/10 text-white">
+            <Button 
+              variant="outline" 
+              onClick={handleLogout} 
+              className="border-white/30 hover:bg-white/10 text-white"
+            >
               <LogOut className="w-4 h-4 mr-2" />
               Sair
             </Button>
@@ -166,10 +186,16 @@ export default function Admin() {
 
         <Tabs defaultValue="registrations" className="space-y-6">
           <TabsList className="bg-white/10 backdrop-blur-sm">
-            <TabsTrigger value="registrations" className="data-[state=active]:bg-white data-[state=active]:text-primary">
+            <TabsTrigger 
+              value="registrations" 
+              className="data-[state=active]:bg-white data-[state=active]:text-primary"
+            >
               Pré-cadastros
             </TabsTrigger>
-            <TabsTrigger value="keepalive" className="data-[state=active]:bg-white data-[state=active]:text-primary">
+            <TabsTrigger 
+              value="keepalive" 
+              className="data-[state=active]:bg-white data-[state=active]:text-primary"
+            >
               <Activity className="w-4 h-4 mr-2" />
               Keep-Alive
             </TabsTrigger>
@@ -199,7 +225,8 @@ export default function Admin() {
                       </TableRow>
                     </TableHeader>
                     <TableBody>
-                      {registrations.map(registration => <TableRow key={registration.id}>
+                      {registrations.map(registration => (
+                        <TableRow key={registration.id}>
                           <TableCell className="font-medium">{registration.name}</TableCell>
                           <TableCell>{registration.email}</TableCell>
                           <TableCell>{registration.phone}</TableCell>
@@ -209,12 +236,15 @@ export default function Admin() {
                           <TableCell>
                             {new Date(registration.created_at).toLocaleDateString('pt-BR')}
                           </TableCell>
-                        </TableRow>)}
+                        </TableRow>
+                      ))}
                     </TableBody>
                   </Table>
-                  {registrations.length === 0 && <div className="text-center py-8 text-muted-foreground">
+                  {registrations.length === 0 && (
+                    <div className="text-center py-8 text-muted-foreground">
                       Nenhum pré-cadastro encontrado.
-                    </div>}
+                    </div>
+                  )}
                 </div>
               </CardContent>
             </Card>
@@ -225,7 +255,7 @@ export default function Admin() {
               <h3 className="text-lg font-medium text-white">Sistema Keep-Alive</h3>
               <p className="text-sm text-white/70">
                 Monitore o status do sistema de keep-alive que mantém o projeto Supabase ativo.
-                O sistema executa automaticamente a cada 12 horas (720 minutos).
+                O sistema executa automaticamente a cada 12 horas (00:00 e 12:00 UTC).
               </p>
             </div>
 
@@ -322,7 +352,9 @@ export default function Admin() {
                             <p className="font-medium">{log.response_time}ms</p>
                           )}
                           {log.error_message && (
-                            <p className="text-red-600 text-xs">{log.error_message}</p>
+                            <p className="text-red-600 text-xs max-w-xs truncate">
+                              {log.error_message}
+                            </p>
                           )}
                         </div>
                       </div>
@@ -334,5 +366,6 @@ export default function Admin() {
           </TabsContent>
         </Tabs>
       </div>
-    </div>;
+    </div>
+  );
 }
