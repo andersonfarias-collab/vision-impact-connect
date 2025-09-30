@@ -38,6 +38,33 @@ export type Database = {
         }
         Relationships: []
       }
+      ping_logs: {
+        Row: {
+          created_at: string | null
+          error_message: string | null
+          id: string
+          metadata: Json | null
+          response_time: number | null
+          status: string
+        }
+        Insert: {
+          created_at?: string | null
+          error_message?: string | null
+          id?: string
+          metadata?: Json | null
+          response_time?: number | null
+          status: string
+        }
+        Update: {
+          created_at?: string | null
+          error_message?: string | null
+          id?: string
+          metadata?: Json | null
+          response_time?: number | null
+          status?: string
+        }
+        Relationships: []
+      }
       pre_registrations: {
         Row: {
           created_at: string
@@ -94,6 +121,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      cleanup_old_ping_logs: {
+        Args: Record<PropertyKey, never>
+        Returns: undefined
+      }
       is_admin_user: {
         Args: { user_id?: string }
         Returns: boolean

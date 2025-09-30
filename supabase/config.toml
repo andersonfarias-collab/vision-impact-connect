@@ -1,1 +1,4 @@
 project_id = "iulucnqcdztbquivripp"
+
+[functions.ping-keep-alive]
+verify_jwt = false
